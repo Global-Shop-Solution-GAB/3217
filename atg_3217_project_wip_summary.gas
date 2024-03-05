@@ -1,0 +1,831 @@
+Program.Sub.ScreenSU.Start
+
+Gui.F_Proj..Create
+Gui.F_Proj..Caption("Project Summary of WIP")
+Gui.F_Proj..Size(5950,5055)
+Gui.F_Proj..Position(0,0)
+Gui.F_Proj..AlwaysOnTop(False)
+Gui.F_Proj..FontName("Arial")
+Gui.F_Proj..FontSize(8)
+Gui.F_Proj..ForeColor(0)
+Gui.F_Proj..Backcolor(-2147483633)
+Gui.F_Proj..ControlBox(True)
+Gui.F_Proj..MaxButton(False)
+Gui.F_Proj..MinButton(False)
+Gui.F_Proj..MousePointer(0)
+Gui.F_Proj..Moveable(True)
+Gui.F_Proj..Sizeable(False)
+Gui.F_Proj..ShowInTaskBar(True)
+Gui.F_Proj..TitleBar(True)
+
+Gui.F_Proj..Event(unload,f_proj_unload)
+
+Gui.F_Proj.lbl_dtpDate.Create(label)
+Gui.F_Proj.lbl_dtpDate.Caption("Select Period")
+Gui.F_Proj.lbl_dtpDate.Visible(True)
+Gui.F_Proj.lbl_dtpDate.Size(1800,200)
+Gui.F_Proj.lbl_dtpDate.Zorder(1)
+Gui.F_Proj.lbl_dtpDate.Position(100,100)
+Gui.F_Proj.lbl_dtpDate.Enabled(True)
+Gui.F_Proj.lbl_dtpDate.Alignment(0)
+Gui.F_Proj.lbl_dtpDate.FontName("Arial")
+Gui.F_Proj.lbl_dtpDate.FontSize(8)
+Gui.F_Proj.lbl_dtpDate.Backcolor(-2147483633)
+Gui.F_Proj.lbl_dtpDate.BackStyle(0)
+Gui.F_Proj.lbl_dtpDate.Tooltip("")
+Gui.F_Proj.lbl_dtpDate.ControlGroup(0)
+
+
+Gui.F_Proj.dtpDate.Create(datepicker)
+Gui.F_Proj.dtpDate.Visible(True)
+Gui.F_Proj.dtpDate.Size(1800,345)
+Gui.F_Proj.dtpDate.Zorder(0)
+Gui.F_Proj.dtpDate.Position(100,300)
+Gui.F_Proj.dtpDate.Enabled(True)
+Gui.F_Proj.dtpDate.Checkbox(False)
+Gui.F_Proj.dtpDate.TabStop(True)
+Gui.F_Proj.dtpDate.TabIndex(1)
+Gui.F_Proj.dtpDate.Tooltip("")
+Gui.F_Proj.dtpDate.ControlGroup(0)
+Gui.F_Proj.dtpDate.DefaultValue("")
+
+
+Gui.F_Proj.lbl_txtStartProj.Create(label)
+Gui.F_Proj.lbl_txtStartProj.Caption("Starting Project")
+Gui.F_Proj.lbl_txtStartProj.Visible(True)
+Gui.F_Proj.lbl_txtStartProj.Size(1800,200)
+Gui.F_Proj.lbl_txtStartProj.Zorder(1)
+Gui.F_Proj.lbl_txtStartProj.Position(100,695)
+Gui.F_Proj.lbl_txtStartProj.Enabled(True)
+Gui.F_Proj.lbl_txtStartProj.Alignment(0)
+Gui.F_Proj.lbl_txtStartProj.FontName("Arial")
+Gui.F_Proj.lbl_txtStartProj.FontSize(8)
+Gui.F_Proj.lbl_txtStartProj.Backcolor(-2147483633)
+Gui.F_Proj.lbl_txtStartProj.BackStyle(0)
+Gui.F_Proj.lbl_txtStartProj.Tooltip("")
+Gui.F_Proj.lbl_txtStartProj.ControlGroup(0)
+
+
+Gui.F_Proj.txtStartProj.Create(textbox)
+Gui.F_Proj.txtStartProj.Text("")
+Gui.F_Proj.txtStartProj.Visible(True)
+Gui.F_Proj.txtStartProj.Size(1800,330)
+Gui.F_Proj.txtStartProj.Zorder(0)
+Gui.F_Proj.txtStartProj.Position(100,895)
+Gui.F_Proj.txtStartProj.Enabled(True)
+Gui.F_Proj.txtStartProj.Alignment(0)
+Gui.F_Proj.txtStartProj.FontName("Arial")
+Gui.F_Proj.txtStartProj.FontSize(8)
+Gui.F_Proj.txtStartProj.Backcolor(16777215)
+Gui.F_Proj.txtStartProj.BorderStyle(1)
+Gui.F_Proj.txtStartProj.MaxLength(7)
+Gui.F_Proj.txtStartProj.TabStop(True)
+Gui.F_Proj.txtStartProj.TabIndex(3)
+Gui.F_Proj.txtStartProj.Tooltip("")
+Gui.F_Proj.txtStartProj.ControlGroup(0)
+Gui.F_Proj.txtStartProj.DefaultValue("")
+
+Gui.F_Proj.txtStartProj.Event(lostfocus,txtstartproj_lostfocus)
+
+Gui.F_Proj.cmd_txtStartProj.Create(button)
+Gui.F_Proj.cmd_txtStartProj.Caption("^")
+Gui.F_Proj.cmd_txtStartProj.Visible(True)
+Gui.F_Proj.cmd_txtStartProj.Size(330,330)
+Gui.F_Proj.cmd_txtStartProj.Zorder(0)
+Gui.F_Proj.cmd_txtStartProj.Position(1950,895)
+Gui.F_Proj.cmd_txtStartProj.Enabled(True)
+Gui.F_Proj.cmd_txtStartProj.FontName("Arial")
+Gui.F_Proj.cmd_txtStartProj.FontSize(8)
+Gui.F_Proj.cmd_txtStartProj.TabStop(True)
+Gui.F_Proj.cmd_txtStartProj.TabIndex(4)
+Gui.F_Proj.cmd_txtStartProj.Tooltip("")
+Gui.F_Proj.cmd_txtStartProj.ControlGroup(0)
+Gui.F_Proj.cmd_txtStartProj.DefaultValue("")
+
+Gui.F_Proj.cmd_txtStartProj.Event(click,cmd_txtstartproj_click)
+
+Gui.F_Proj.lbl_txtEndProj.Create(label)
+Gui.F_Proj.lbl_txtEndProj.Caption("Ending Project")
+Gui.F_Proj.lbl_txtEndProj.Visible(True)
+Gui.F_Proj.lbl_txtEndProj.Size(1800,200)
+Gui.F_Proj.lbl_txtEndProj.Zorder(1)
+Gui.F_Proj.lbl_txtEndProj.Position(2350,695)
+Gui.F_Proj.lbl_txtEndProj.Enabled(True)
+Gui.F_Proj.lbl_txtEndProj.Alignment(0)
+Gui.F_Proj.lbl_txtEndProj.FontName("Arial")
+Gui.F_Proj.lbl_txtEndProj.FontSize(8)
+Gui.F_Proj.lbl_txtEndProj.Backcolor(-2147483633)
+Gui.F_Proj.lbl_txtEndProj.BackStyle(0)
+Gui.F_Proj.lbl_txtEndProj.Tooltip("")
+Gui.F_Proj.lbl_txtEndProj.ControlGroup(0)
+
+
+Gui.F_Proj.txtEndProj.Create(textbox)
+Gui.F_Proj.txtEndProj.Text("")
+Gui.F_Proj.txtEndProj.Visible(True)
+Gui.F_Proj.txtEndProj.Size(1800,330)
+Gui.F_Proj.txtEndProj.Zorder(0)
+Gui.F_Proj.txtEndProj.Position(2350,895)
+Gui.F_Proj.txtEndProj.Enabled(True)
+Gui.F_Proj.txtEndProj.Alignment(0)
+Gui.F_Proj.txtEndProj.FontName("Arial")
+Gui.F_Proj.txtEndProj.FontSize(8)
+Gui.F_Proj.txtEndProj.Backcolor(16777215)
+Gui.F_Proj.txtEndProj.BorderStyle(1)
+Gui.F_Proj.txtEndProj.MaxLength(7)
+Gui.F_Proj.txtEndProj.TabStop(True)
+Gui.F_Proj.txtEndProj.TabIndex(6)
+Gui.F_Proj.txtEndProj.Tooltip("")
+Gui.F_Proj.txtEndProj.ControlGroup(0)
+Gui.F_Proj.txtEndProj.DefaultValue("")
+
+
+Gui.F_Proj.cmd_txtEndProj.Create(button)
+Gui.F_Proj.cmd_txtEndProj.Caption("^")
+Gui.F_Proj.cmd_txtEndProj.Visible(True)
+Gui.F_Proj.cmd_txtEndProj.Size(330,330)
+Gui.F_Proj.cmd_txtEndProj.Zorder(0)
+Gui.F_Proj.cmd_txtEndProj.Position(4200,895)
+Gui.F_Proj.cmd_txtEndProj.Enabled(True)
+Gui.F_Proj.cmd_txtEndProj.FontName("Arial")
+Gui.F_Proj.cmd_txtEndProj.FontSize(8)
+Gui.F_Proj.cmd_txtEndProj.TabStop(True)
+Gui.F_Proj.cmd_txtEndProj.TabIndex(7)
+Gui.F_Proj.cmd_txtEndProj.Tooltip("")
+Gui.F_Proj.cmd_txtEndProj.ControlGroup(0)
+Gui.F_Proj.cmd_txtEndProj.DefaultValue("")
+
+Gui.F_Proj.cmd_txtEndProj.Event(click,cmd_txtendproj_click)
+
+Gui.F_Proj.chkAllProj.Create(checkbox)
+Gui.F_Proj.chkAllProj.Alignment(0)
+Gui.F_Proj.chkAllProj.Caption("All Projects")
+Gui.F_Proj.chkAllProj.Visible(True)
+Gui.F_Proj.chkAllProj.Size(1800,300)
+Gui.F_Proj.chkAllProj.Zorder(0)
+Gui.F_Proj.chkAllProj.Position(100,1325)
+Gui.F_Proj.chkAllProj.Enabled(True)
+Gui.F_Proj.chkAllProj.FontName("Arial")
+Gui.F_Proj.chkAllProj.FontSize(8)
+Gui.F_Proj.chkAllProj.TabStop(True)
+Gui.F_Proj.chkAllProj.TabIndex(8)
+Gui.F_Proj.chkAllProj.Tooltip("")
+Gui.F_Proj.chkAllProj.ControlGroup(0)
+Gui.F_Proj.chkAllProj.DefaultValue("")
+
+Gui.F_Proj.chkAllProj.Event(click,chkallproj_click)
+
+Gui.F_Proj.lvwProj.Create(listview)
+Gui.F_Proj.lvwProj.Visible(True)
+Gui.F_Proj.lvwProj.Size(5600,2000)
+Gui.F_Proj.lvwProj.Zorder(0)
+Gui.F_Proj.lvwProj.Position(100,1675)
+Gui.F_Proj.lvwProj.Enabled(True)
+Gui.F_Proj.lvwProj.BorderStyle(1)
+Gui.F_Proj.lvwProj.FontName("Arial")
+Gui.F_Proj.lvwProj.FontSize(8)
+Gui.F_Proj.lvwProj.TabStop(True)
+Gui.F_Proj.lvwProj.TabIndex(9)
+Gui.F_Proj.lvwProj.Tooltip("")
+Gui.F_Proj.lvwProj.View(3)
+Gui.F_Proj.lvwProj.AddListViewColumn("Starting Project",2600,0)
+Gui.F_Proj.lvwProj.AddListViewColumn("Ending Project",2600,0)
+
+
+Gui.F_Proj.cmd_lvwProjAdd.Create(button)
+Gui.F_Proj.cmd_lvwProjAdd.Caption("Add")
+Gui.F_Proj.cmd_lvwProjAdd.Visible(True)
+Gui.F_Proj.cmd_lvwProjAdd.Size(1000,330)
+Gui.F_Proj.cmd_lvwProjAdd.Zorder(0)
+Gui.F_Proj.cmd_lvwProjAdd.Position(4600,895)
+Gui.F_Proj.cmd_lvwProjAdd.Enabled(True)
+Gui.F_Proj.cmd_lvwProjAdd.FontName("Arial")
+Gui.F_Proj.cmd_lvwProjAdd.FontSize(8)
+Gui.F_Proj.cmd_lvwProjAdd.TabStop(True)
+Gui.F_Proj.cmd_lvwProjAdd.TabIndex(10)
+Gui.F_Proj.cmd_lvwProjAdd.Tooltip("")
+Gui.F_Proj.cmd_lvwProjAdd.ControlGroup(0)
+Gui.F_Proj.cmd_lvwProjAdd.DefaultValue("")
+
+Gui.F_Proj.cmd_lvwProjAdd.Event(click,cmd_lvwprojadd_click)
+
+Gui.F_Proj.cmd_lvwProjDelete.Create(button)
+Gui.F_Proj.cmd_lvwProjDelete.Caption("Delete")
+Gui.F_Proj.cmd_lvwProjDelete.Visible(True)
+Gui.F_Proj.cmd_lvwProjDelete.Size(1000,330)
+Gui.F_Proj.cmd_lvwProjDelete.Zorder(0)
+Gui.F_Proj.cmd_lvwProjDelete.Position(100,3725)
+Gui.F_Proj.cmd_lvwProjDelete.Enabled(True)
+Gui.F_Proj.cmd_lvwProjDelete.FontName("Arial")
+Gui.F_Proj.cmd_lvwProjDelete.FontSize(8)
+Gui.F_Proj.cmd_lvwProjDelete.TabStop(True)
+Gui.F_Proj.cmd_lvwProjDelete.TabIndex(11)
+Gui.F_Proj.cmd_lvwProjDelete.Tooltip("")
+Gui.F_Proj.cmd_lvwProjDelete.ControlGroup(0)
+Gui.F_Proj.cmd_lvwProjDelete.DefaultValue("")
+
+Gui.F_Proj.cmd_lvwProjDelete.Event(click,cmd_lvwprojdelete_click)
+
+Gui.F_Proj.cmd_lvwProjClear.Create(button)
+Gui.F_Proj.cmd_lvwProjClear.Caption("Clear")
+Gui.F_Proj.cmd_lvwProjClear.Visible(True)
+Gui.F_Proj.cmd_lvwProjClear.Size(1000,330)
+Gui.F_Proj.cmd_lvwProjClear.Zorder(0)
+Gui.F_Proj.cmd_lvwProjClear.Position(1150,3725)
+Gui.F_Proj.cmd_lvwProjClear.Enabled(True)
+Gui.F_Proj.cmd_lvwProjClear.FontName("Arial")
+Gui.F_Proj.cmd_lvwProjClear.FontSize(8)
+Gui.F_Proj.cmd_lvwProjClear.TabStop(True)
+Gui.F_Proj.cmd_lvwProjClear.TabIndex(12)
+Gui.F_Proj.cmd_lvwProjClear.Tooltip("")
+Gui.F_Proj.cmd_lvwProjClear.ControlGroup(0)
+Gui.F_Proj.cmd_lvwProjClear.DefaultValue("")
+
+Gui.F_Proj.cmd_lvwProjClear.Event(click,cmd_lvwprojclear_click)
+
+Gui.F_Proj.cmdPrint.Create(button)
+Gui.F_Proj.cmdPrint.Caption("Print")
+Gui.F_Proj.cmdPrint.Visible(True)
+Gui.F_Proj.cmdPrint.Size(1000,360)
+Gui.F_Proj.cmdPrint.Zorder(0)
+Gui.F_Proj.cmdPrint.Position(100,4185)
+Gui.F_Proj.cmdPrint.Enabled(True)
+Gui.F_Proj.cmdPrint.FontName("Arial")
+Gui.F_Proj.cmdPrint.FontSize(8)
+Gui.F_Proj.cmdPrint.TabStop(True)
+Gui.F_Proj.cmdPrint.TabIndex(13)
+Gui.F_Proj.cmdPrint.Tooltip("")
+Gui.F_Proj.cmdPrint.ControlGroup(0)
+Gui.F_Proj.cmdPrint.DefaultValue("")
+
+Gui.F_Proj.cmdPrint.Event(click,cmdprint_click)
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.iKey.Declare(Long,0)
+Variable.Global.bChkOpt.Declare(Boolean,True)
+Variable.UDT.ProjectRpt.Define("Terminal",String,"Terminal")
+Variable.UDT.ProjectRpt.Define("Project",String,"Project")
+Variable.UDT.ProjectRpt.Define("OpenBal",Float,"Open_Balance")
+Variable.UDT.ProjectRpt.Define("Activity",Float,"Activity")
+Variable.UDT.ProjectRpt.Define("Transfer",Float,"Transfer")
+Variable.UDT.ProjectRpt.Define("CloseBal",Float,"Close_Balance")
+Variable.uGlobal.uProjectRpt.Declare("ProjectRpt")
+Variable.UDT.ProjectLst.Define("Project",String,"PROJECT")
+Variable.uGlobal.uProjectLst.Declare("ProjectLst")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: MLA
+'Project Start Date: 4/20/2011
+'Notes:
+'  Alliance Spacesystems
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+Gui.F_Proj..Show
+Gui.F_Proj.dtpDate.CustomFormat("MMM yyy")
+
+Program.Sub.Main.End
+
+program.sub.f_proj_unload.start
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+program.sub.f_proj_unload.end
+
+program.sub.cmd_txtstartproj_click.start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmd_txtStartProj_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sSql.Set("Select PROJECT, DESCR, CUSTOMER from V_PROJECT_MASTER ORDER BY PROJECT")
+V.Local.sTitles.Set("Project*!*Description*!*Customer")
+V.Local.sWidths.Set("1500*!*4200*!*1000")
+
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Selet Project","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,5000,8000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Proj.txtStartProj.Text(V.Local.sRet.Trim)
+	Gui.F_Proj.txtEndProj.Text(V.Screen.F_Proj!txtStartProj.Text)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtStartProj_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtstartproj_click.end
+
+program.sub.cmd_txtendproj_click.start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmd_txtEndProj_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sSql.Set("Select PROJECT, DESCR, CUSTOMER from V_PROJECT_MASTER ORDER BY PROJECT")
+V.Local.sTitles.Set("Project*!*Description*!*Customer")
+V.Local.sWidths.Set("1500*!*4200*!*1000")
+
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Selet Project","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,5000,8000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Proj.txtEndProj.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtEndtProj_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtendproj_click.end
+
+program.sub.cmd_lvwprojadd_click.start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmd_lvwProjAdd_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.String.Concat("Select PROJECT from V_PROJECT_MASTER where PROJECT = '",V.Screen.F_Proj!txtStartProj.Text,"'",V.Local.sSql)
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,"True")
+	F.Intrinsic.UI.Msgbox("Invalid starting project selected!","Invalid Project")
+	F.ODBC.con!rst.Close
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.ODBC.con!rst.Close
+	F.Intrinsic.String.Concat("Select PROJECT from V_PROJECT_MASTER where PROJECT = '",V.Screen.F_Proj!txtEndProj.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+		F.Intrinsic.UI.Msgbox("Invalid ending bin selected!","Invalid Bin")
+		F.ODBC.con!rst.Close
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Close
+		F.Intrinsic.Math.Add(V.Global.iKey,1,V.Global.iKey)
+		Gui.F_Proj.lvwProj.AddListItem(V.Global.iKey,V.Screen.F_Proj!txtStartProj.Text)
+		Gui.F_Proj.lvwProj.SetListItemSubItemText(V.Global.iKey,1,V.Screen.F_Proj!txtEndProj.Text)
+		Gui.F_Proj.txtStartProj.Text("")
+		Gui.F_Proj.txtEndProj.Text("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvwProjAdd_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_lvwprojadd_click.end
+
+program.sub.chkallproj_click.start
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("chkAllProj_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Control.If(V.Screen.F_Proj!chkAllProj.Value,=,1)
+	Gui.F_Proj.txtStartProj.Enabled(False)
+	Gui.F_Proj.txtEndProj.Enabled(False)
+	Gui.F_Proj.txtStartProj.Text("")
+	Gui.F_Proj.txtEndProj.Text("")
+	Gui.F_Proj.cmd_txtStartProj.Enabled(False)
+	Gui.F_Proj.cmd_txtEndProj.Enabled(False)
+	Gui.F_Proj.cmd_lvwProjAdd.Enabled(False)
+	Gui.F_Proj.cmd_lvwProjClear.Enabled(False)
+	Gui.F_Proj.cmd_lvwProjDelete.Enabled(False)
+	Gui.F_Proj.lvwProj.Enabled(False)
+F.Intrinsic.Control.Else
+	Gui.F_Proj.txtStartProj.Enabled(True)
+	Gui.F_Proj.txtEndProj.Enabled(True)
+	Gui.F_Proj.cmd_txtStartProj.Enabled(True)
+	Gui.F_Proj.cmd_txtEndProj.Enabled(True)
+	Gui.F_Proj.cmd_lvwProjAdd.Enabled(True)
+	Gui.F_Proj.cmd_lvwProjClear.Enabled(True)
+	Gui.F_Proj.cmd_lvwProjDelete.Enabled(True)
+	Gui.F_Proj.lvwProj.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkAllProj_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.chkallproj_click.end
+
+program.sub.cmd_lvwprojdelete_click.start
+V.Local.sError.Declare(String)
+V.Local.iKey.Declare(Long)
+V.Local.iOrd.Declare(Long)
+
+F.Intrinsic.Control.SetErrorHandler("cmd_lvwProjDelete_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.iKey.Set(V.Screen.F_Proj!lvwProj.SelectedItemKey)
+Gui.F_Proj.lvwProj.ListItemKeyToOrdinal(V.Local.iKey,V.Local.iOrd)
+Gui.F_Proj.lvwProj.RemoveItem(V.Local.iOrd)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvwProjDelete_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_lvwprojdelete_click.end
+
+program.sub.cmd_lvwprojclear_click.start
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmdClearBin_Err")
+F.Intrinsic.Control.ClearErrors
+
+Gui.F_Proj.lvwProj.ClearItems
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdClearBin_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_lvwprojclear_click.end
+
+program.sub.cmdprint_click.start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmdPrint_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Control.CallSub(Chkopt)
+F.Intrinsic.Control.If(V.Global.bChkOpt,=,True)
+	Gui.F_Proj..Visible(False)
+	F.Intrinsic.String.Concat("Delete ATG_BI_Project_WIP where Terminal = '",V.Caller.Terminal,"'",V.Local.sSql)
+	F.ODBC.Connection!con.Execute(V.Local.sSql)
+	F.Intrinsic.Control.CallSub(Searchlist)
+	F.Intrinsic.Control.CallSub(Loadudt)
+	F.Intrinsic.Control.CallSub(Loadrst)
+	F.Intrinsic.Control.CallSub(Callbi)
+	F.Intrinsic.Control.CallSub(F_proj_unload)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPrint_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdprint_click.end
+
+program.sub.txtstartproj_lostfocus.start
+Gui.F_Proj.txtEndProj.Text(V.Screen.F_Proj!txtStartProj.Text)
+
+program.sub.txtstartproj_lostfocus.end
+
+Program.Sub.ChkOpt.Start
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("ChkOpt_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Global.bChkOpt.Set(True)
+F.Intrinsic.Control.If(V.Screen.F_Proj!chkAllProj.Value,<>,1)
+	Gui.F_Proj.lvwProj.RetrieveAllListItems(V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+		F.Intrinsic.UI.Msgbox("Please select a valid project range","Invalid Project Range")
+		V.Global.bChkOpt.Set(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ChkOpt_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.ChkOpt.End
+
+Program.Sub.LoadUDT.Start
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.dPDate.Declare(Date)
+V.Local.dStart1.Declare(Date)
+V.Local.dStart2.Declare(Date)
+V.Local.sCurrStart1.Declare(String)
+V.Local.sCurrStart2.Declare(String)
+V.Local.dStop1.Declare(Date)
+V.Local.dStop2.Declare(Date)
+V.Local.sCurrStop1.Declare(String)
+V.Local.sCurrStop2.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.iUB.Declare(Long)
+V.Local.fCost1.Declare(Float)
+V.Local.fRev1.Declare(Float)
+V.Local.fCost2.Declare(Float)
+V.Local.fRev2.Declare(Float)
+V.Local.fBegBal.Declare(Float)
+V.Local.iMM.Declare(Long)
+V.Local.iYR.Declare(Long)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("LoadUDT_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.uGlobal.uProjectRpt.Redim(-1,-1)
+V.Local.iUB.Set(-1)
+'Getting current period date range
+F.Intrinsic.Date.DateAdd("M",-1,V.Screen.F_Proj!dtpDate.Value,V.Local.dStart1)
+F.Intrinsic.Date.Month(V.Local.dStart1,V.Local.iMM)
+F.Intrinsic.Date.Year(V.Local.dStart1,V.Local.iYR)
+F.Intrinsic.Date.DatesFromGLPeriod(V.Local.iMM,V.Local.iYR,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***NONE***")
+	F.Intrinsic.UI.Msgbox("No GL period found!","GL Period Error")
+	F.Intrinsic.Control.CallSub(F_proj_unload)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Local.dStart1.Set(V.Local.sRet(0))
+	V.Local.dStart2.Set(V.Local.sRet(1))
+	F.Intrinsic.String.Format(V.Local.dStart1,"YYYYMMDD",V.Local.sCurrStart1)
+	F.Intrinsic.String.Format(V.Local.dStart2,"YYYYMMDD",V.Local.sCurrStart2)
+F.Intrinsic.Control.EndIf
+V.Local.dStop1.Set(V.Screen.F_Proj!dtpDate.Value)
+F.Intrinsic.Date.Month(V.Local.dStop1,V.Local.iMM)
+F.Intrinsic.Date.Year(V.Local.dStop1,V.Local.iYR)
+V.Local.sRet.Redim(0,0)
+F.Intrinsic.Date.DatesFromGLPeriod(V.Local.iMM,V.Local.iYR,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***NONE***")
+	F.Intrinsic.UI.Msgbox("No GL period found!","GL Period Error")
+	F.Intrinsic.Control.CallSub(F_proj_unload)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Local.dStop1.Set(V.Local.sRet(0))
+	V.Local.dStop2.Set(V.Local.sRet(1))
+	F.Intrinsic.String.Format(V.Local.dStop1,"YYYYMMDD",V.Local.sCurrStop1)
+	F.Intrinsic.String.Format(V.Local.dStop2,"YYYYMMDD",V.Local.sCurrStop2)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uProjectLst.LBound,V.uGlobal.uProjectLst.UBound,1)
+	'Getting current period records
+	'first checkpoint information for current period
+	F.Intrinsic.String.Concat("Select PROJECT, CHK_DATE, ACT_COST, ACT_REV_TODATE from V_PROJECT_CHKPNT where USED_FOR_REV_REC= 'Y' and PROJECT = '",V.uGlobal.uProjectLst(V.Local.i)!Project,"' and CHK_DATE between '",V.Local.sCurrStart1,"' and '",V.Local.sCurrStart2,"' ORDER BY DATE_CREATED, TIME_CREATED",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+		F.Intrinsic.Control.Do
+			F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+				F.Intrinsic.Control.ExitDo
+			F.Intrinsic.Control.EndIf
+			V.Local.fRev1.Set(V.ODBC.con!rst.FieldValFloat!ACT_COR_TODATE)
+			F.ODBC.con!rst.MoveNext
+		F.Intrinsic.Control.Loop
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("Select PROJECT, CHK_DATE, ACT_COST, ACT_REV_TODATE from V_PROJECT_CHKPNT where USED_FOR_REV_REC= '' and PROJECT = '",V.uGlobal.uProjectLst(V.Local.i)!Project,"' and CHK_DATE between '",V.Local.sCurrStart1,"' and '",V.Local.sCurrStart2,"' ORDER BY DATE_CREATED, TIME_CREATED",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+			F.Intrinsic.Control.Do
+				F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+					F.Intrinsic.Control.ExitDo
+				F.Intrinsic.Control.EndIf
+				V.Local.fRev1.Set(V.ODBC.con!rst.FieldValFloat!ACT_COR_TODATE)
+				F.ODBC.con!rst.MoveNext
+			F.Intrinsic.Control.Loop
+			F.ODBC.con!rst.Close
+		F.Intrinsic.Control.Else
+			V.Local.fRev1.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	'second checkpoint information for current period
+	F.Intrinsic.String.Concat("Select PROJECT, CHK_DATE, ACT_COST, ACT_REV_TODATE from V_PROJECT_CHKPNT where USED_FOR_REV_REC= 'Y' and PROJECT = '",V.uGlobal.uProjectLst(V.Local.i)!Project,"' and CHK_DATE between '",V.Local.sCurrStop1,"' and '",V.Local.sCurrStop2,"' ORDER BY DATE_CREATED, TIME_CREATED",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+		F.Intrinsic.Control.Do
+			F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+				F.Intrinsic.Control.ExitDo
+			F.Intrinsic.Control.EndIf
+			V.Local.fRev2.Set(V.ODBC.con!rst.FieldValFloat!ACT_COR_TODATE)
+			F.ODBC.con!rst.MoveNext
+		F.Intrinsic.Control.Loop
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("Select PROJECT, CHK_DATE, ACT_COST, ACT_REV_TODATE from V_PROJECT_CHKPNT where USED_FOR_REV_REC= '' and PROJECT = '",V.uGlobal.uProjectLst(V.Local.i)!Project,"' and CHK_DATE between '",V.Local.sCurrStop1,"' and '",V.Local.sCurrStop2,"' ORDER BY DATE_CREATED, TIME_CREATED",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+			F.Intrinsic.Control.Do
+				F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+					F.Intrinsic.Control.ExitDo
+				F.Intrinsic.Control.EndIf
+				V.Local.fRev2.Set(V.ODBC.con!rst.FieldValFloat!ACT_COR_TODATE)
+				F.ODBC.con!rst.MoveNext
+			F.Intrinsic.Control.Loop
+			F.ODBC.con!rst.Close
+		F.Intrinsic.Control.Else
+			V.Local.fRev2.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.uGlobal.uProjectRpt.UBound,=,-1)
+		V.uGlobal.uProjectRpt.Redim(0,0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+	V.uGlobal.uProjectRpt.RedimPreserve(0,V.Local.iUB)
+	V.uGlobal.uProjectRpt(V.Local.iUB)!Terminal.Set(V.Caller.Terminal)
+	V.uGlobal.uProjectRpt(V.Local.iUB)!Project.Set(V.uGlobal.uProjectLst(V.Local.i)!Project)
+	F.Intrinsic.Math.Sub(V.Local.fRev2,V.Local.fRev1,V.uGlobal.uProjectRpt(V.Local.iUB)!Transfer)
+	'Getting costs from work orders
+	V.Local.fCost1.Set(0)
+	V.Local.fCost2.Set(0)
+	F.Intrinsic.String.Concat("Select JOB, SUFFIX from V_JOB_HEADER where PROJECT = '",V.uGlobal.uProjectLst(V.Local.i)!Project,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rstJob",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.con!rstJob.EOF,=,True)
+			V.uGlobal.uProjectRpt(V.Local.iUB)!Activity.Set(0)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.DoUntil(V.ODBC.con!rstJob.EOF,=,True)
+				F.Intrinsic.String.Concat("Select AMOUNT_LABOR, AMT_OVERHEAD from V_JOB_DETAIL where EDITED_WO_DTL <> 'R' and JOB = '",V.ODBC.con!rstJob.FieldValTrim!JOB,"' and SUFFIX = '",V.ODBC.con!rstJob.FieldValTrim!SUFFIX,"' and LMO IN ('O','M','L') and DATE_SEQUENCE < '",V.Local.dStop1.PervasiveDate,"'",V.Local.sSql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstDetail",V.Local.sSql)
+				F.Intrinsic.Control.DoUntil(V.ODBC.con!rstDetail.EOF,=,True)
+					F.Intrinsic.Math.Add(V.Local.fCost1,V.ODBC.con!rstDetail.FieldValFloat!AMOUNT_LABOR,V.Local.fCost1)
+					F.Intrinsic.Math.Add(V.Local.fCost1,V.ODBC.con!rstDetail.FieldValFloat!AMT_OVERHEAD,V.Local.fCost1)
+					F.ODBC.con!rstDetail.MoveNext
+				F.Intrinsic.Control.Loop
+				F.ODBC.con!rstDetail.Close
+				F.Intrinsic.String.Concat("Select AMOUNT_LABOR, AMT_OVERHEAD from V_JOB_DETAIL where EDITED_WO_DTL <> 'R' and JOB = '",V.ODBC.con!rstJob.FieldValTrim!JOB,"' and SUFFIX = '",V.ODBC.con!rstJob.FieldValTrim!SUFFIX,"' and LMO IN ('O','M','L') and DATE_SEQUENCE >= '",V.Local.dStop1.PervasiveDate,"' and DATE_SEQUENCE <= '",V.Local.dStop2.PervasiveDate,"'",V.Local.sSql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstDetail",V.Local.sSql)
+				F.Intrinsic.Control.DoUntil(V.ODBC.con!rstDetail.EOF,=,True)
+					F.Intrinsic.Math.Add(V.Local.fCost2,V.ODBC.con!rstDetail.FieldValFloat!AMOUNT_LABOR,V.Local.fCost2)
+					F.Intrinsic.Math.Add(V.Local.fCost2,V.ODBC.con!rstDetail.FieldValFloat!AMT_OVERHEAD,V.Local.fCost2)
+					F.ODBC.con!rstDetail.MoveNext
+				F.Intrinsic.Control.Loop
+				F.ODBC.con!rstDetail.Close
+				F.ODBC.con!rstJob.MoveNext
+			F.Intrinsic.Control.Loop
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Math.Sub(V.Local.fRev1,V.Local.fCost1,V.uGlobal.uProjectRpt(V.Local.iUB)!OpenBal)
+		V.uGlobal.uProjectRpt(V.Local.iUB)!Activity.Set(V.Local.fCost2)
+		F.Intrinsic.Math.Add(V.Local.fCost1,V.Local.fCost2,V.Local.fCost2)
+		F.Intrinsic.Math.Sub(V.Local.fRev2,V.Local.fCost2,V.uGlobal.uProjectRpt(V.Local.iUB)!CloseBal)
+		F.ODBC.con!rstJob.Close
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.Next(V.Local.i)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadUDT_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadUDT.End
+
+Program.Sub.SearchList.Start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sProjectList.Declare(String)
+V.Local.sProject.Declare(String)
+V.Local.iOrd.Declare(Long)
+V.Local.i.Declare(Long)
+
+F.Intrinsic.Control.SetErrorHandler("SearchList_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Control.If(V.Screen.F_Proj!chkAllProj.Value,=,1)
+	V.Local.sSql.Set("Select PROJECT from V_PROJECT_MASTER Order By PROJECT")
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Variable.LoadUDTFromRecordset("con","rst","uGlobal.uProjectLst","false")
+	F.ODBC.con!rst.Close
+F.Intrinsic.Control.Else
+	V.uGlobal.uProjectLst.Redim(-1,-1)
+	Gui.F_Proj.lvwProj.RetrieveAllListItems(V.Local.sProjectList)
+	F.Intrinsic.String.Split(V.Local.sProjectList,"*!*",V.Local.sProjectList)
+	F.Intrinsic.Control.For(V.Local.i,V.Local.sProjectList.LBound,V.Local.sProjectList.UBound,1)
+		Gui.F_Proj.lvwProj.ListItemKeyToOrdinal(V.Local.sProjectList(V.Local.i),V.Local.iOrd)
+		V.Local.sProject.Set(V.Screen.F_Proj!lvwProj.ListItemTextExtended(V.Local.iOrd))
+		F.Intrinsic.String.Split(V.Local.sProject,"*!*",V.Local.sProject)
+		F.Intrinsic.String.Concat("Select PROJECT from V_PROJECT_MASTER where PROJECT >= '",V.Local.sProject(0),"' and PROJECT <= '",V.Local.sProject(1),"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.uGlobal.uProjectLst.UBound,=,-1)
+			V.uGlobal.uProjectLst.Redim(0,0)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("con","rst","uGlobal.uProjectLst","false",100)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Variable.LoadUDTFromRecordset("con","rst","uGlobal.uProjectLst","true",100)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.Next(V.Local.i)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("SearchList_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.SearchList.End
+
+Program.Sub.LoadRST.Start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("LoadRST_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Control.If(V.uGlobal.uProjectRpt.UBound,<>,-1)
+	V.Local.sSql.Set("Select * from ATG_BI_Project_WIP")
+	F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)
+	F.Intrinsic.Variable.SaveUDTToRecordset("con","rst","Variable.uGlobal.uProjectRpt")
+	F.ODBC.con!rst.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadRST_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadRST.End
+
+Program.Sub.CallBI.Start
+V.Local.sError.Declare(String)
+V.Local.iBI.Declare(Long)
+V.Local.sParam.Declare(String)
+V.Local.sParamVal.Declare(String)
+V.Local.iYear.Declare(Long)
+V.Local.iMonth.Declare(Long)
+
+F.Intrinsic.Control.SetErrorHandler("CallBI_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Date.Year(V.Screen.F_Proj!dtpDate.Value,V.Local.iYear)
+F.Intrinsic.Date.Month(V.Screen.F_Proj!dtpDate.Value,V.Local.iMonth)
+F.Intrinsic.String.Concat(V.Local.iYear,"/",V.Local.iMonth,"*!*",V.Caller.Terminal,V.Local.sParamVal)
+V.Local.sParam.Set("Period*!*Terminal")
+F.Intrinsic.String.Split(V.Local.sParam,"*!*",V.Local.sParam)
+F.Intrinsic.String.Split(V.Local.sParamVal,"*!*",V.Local.sParamVal)
+F.Global.BI.GetIDFromName("ATG_BI_Project_WIP_Summary.rpt",V.Local.iBI)
+F.Global.BI.PrintReport(V.Local.iBI,0,V.Local.sParam,V.Local.sParamVal,"",False)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.CallBI.End
+
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::Poject Gross Profit Margin
+SS_Form1.CTRL{{NAME::dtpDate\\TYPE::6\\CAPTION::Select Period\\GROUP::-1\\BROWSER::0
+SS_Form1.CTRL{{NAME::txtStartProj\\TYPE::2\\CAPTION::Starting Project\\RANGE::lvwProj\\GROUP::1\\BROWSER::1
+SS_Form1.CTRL{{NAME::txtEndProj\\TYPE::2\\CAPTION::Ending Project\\RANGE::lvwProj\\GROUP::1\\BROWSER::1
+SS_Form1.CTRL{{NAME::chkAllProj\\TYPE::9\\CAPTION::All Projects\\GROUP::-1\\BROWSER::0
+SS_Form1.CTRL{{NAME::lvwProj\\TYPE::7\\GROUP::-1\\BROWSER::0
+SS_Form1.CTRL{{NAME::cmdPrint\\TYPE::5\\CAPTION::Print\\GROUP::-1\\BROWSER::0
+
+Program.Sub.ScreenSS.End
+
+
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+Program.Sub.Comments.End
